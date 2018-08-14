@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <style>
+        li{width:200px;
+        height:200px;list-style: none;text-align: center;line-height: 200px;font-size:20px;}
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        
+        <input type="range" max="255" v-model="r">
+        <input type="range" max="255" v-model="g">
+        <input type="range" max="255" v-model="b">
+        <li :style="{color:bianhua}">爱佳慧真实太好了</li>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:".top",
+            data:{
+                r:0,
+
+                g:0,
+                b:0
+            },
+            computed:{
+                bianhua(){
+                    return `rgb(${this.r},${this.g},${this.b})`
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
